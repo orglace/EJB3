@@ -2,8 +2,8 @@
 /Sample-EJB/build/
 /Sample-Client/dist/
 /Sample-EJB/dist/
-/Sample-WEB/nbproject/private/
+/Sample-WEB/nbproject/
 /Sample-WEB/build/
 /Sample-WEB/dist/
-/Sample-EJB/nbproject/private/
-/Sample-Client/nbproject/private/
+/Sample-EJB/nbproject/
+/Sample-Client/nbproject/
