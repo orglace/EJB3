@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.javacodegeeks.example.entity;
+package com.example.ejb.entity;
 
 import java.io.Serializable;
 import javax.persistence.Entity;
@@ -22,13 +22,15 @@ public class Customer implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    
     private String firstName;
-    private String LastName; 
+    
+    private String lastName;
 
     public Long getId() {
         return id;
     }
-
+    
     public void setId(Long id) {
         this.id = id;
     }
@@ -42,11 +44,11 @@ public class Customer implements Serializable {
     }
 
     public String getLastName() {
-        return LastName;
+        return lastName;
     }
 
-    public void setLastName(String LastName) {
-        this.LastName = LastName;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     @Override
@@ -71,7 +73,7 @@ public class Customer implements Serializable {
 
     @Override
     public String toString() {
-        return "com.javacodegeeks.example.entity.Customer[ id=" + id + " ]";
+        return "com.example.ejb.entity.Customer[ id=" + id + " ]";
     }
     
 }
