@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 import javax.ejb.EJB;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -69,8 +70,7 @@ public class AccountController extends HttpServlet {
         //processRequest(request, response);
         List<Customer> customers = accountService.findAllCustomers();
         
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
+        /*try (PrintWriter out = response.getWriter()) {
             
             out.println("<a href=\"index.html\">Back to Menu</a><br><br>");
             out.println("<table border=\"1\" cellpadding=\"5\" cellspacing=\"5\">");
@@ -81,7 +81,12 @@ public class AccountController extends HttpServlet {
             }
             
             out.println("</table>");
-        }
+        }*/
+        
+        request.setAttribute("customers", customers);
+        
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("list.jsp");
+        requestDispatcher.forward(request, response);
     }
 
     /**
